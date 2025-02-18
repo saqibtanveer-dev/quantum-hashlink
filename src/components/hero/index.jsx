@@ -8,7 +8,7 @@ const Hero = () => {
         id="home"
         className="relative flex justify-center z-10 overflow-hidden bg-white pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[80px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px] px-0 sm:px-12"
       >
-        <div className="container max-w-[1200px]">
+        <div className="container max-w-[1100px]">
           <div className="flex flex-wrap">
             <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-end">
               <div className="mx-auto max-w-[600px] text-start">

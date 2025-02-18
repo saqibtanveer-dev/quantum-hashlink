@@ -49,7 +49,7 @@ const Video = () => {
         </div>
       </div>
 
-    <div className="absolute h-full w-full flex items-center justify-center border border-red-900">
+    <div className="absolute h-full w-full flex items-center justify-center">
       <ModalVideo
         classNames={"top-[50%]"} 
         channel="youtube"

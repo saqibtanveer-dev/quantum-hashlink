@@ -5,7 +5,7 @@ import featuresData from "./featuresData";
 const Features = () => {
   return (
     <>
-      <section id="features" className="py-16 md:py-20 lg:py-28 flex justify-center max-w-[1400px] justify-self-center">
+      <section id="features" className="relative flex justify-center">
         <div className="container">
           <SectionTitle
             title="Main Features"

@@ -41,14 +41,14 @@ const Header = () => {
   return (
     <>
       <header
-        className={`header top-0 z-40 flex justify-center items-center ${
+        className={`header w-full top-0 z-40 flex flex-row justify-center items-center ${
           sticky
             ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
             : "absolute bg-transparent"
         }`}
       >
         <div className="">
-          <div className="relative w-[100vw] -mx-4 lg:px-20 flex items-center justify-between gap-8">
+          <div className="relative w-[100vw] container -mx-4 lg:px-20 flex items-center justify-between gap-8">
               <div className="">
               <Link
                 href="/"

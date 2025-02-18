@@ -32,7 +32,7 @@ export default function Team() {
           The creative minds behind <span className="font-semibold text-[#b5246c]">Quantum Hashlink</span>.
         </p>
 
-      <div className="w-full max-w-[80%] mx-auto flex flex-col md:flex-row bg-white shadow-md rounded-lg py-6 mt-16">
+      <div className="w-full max-w-[100%] mx-auto flex flex-col md:flex-row bg-white shadow-md rounded-lg py-6 mt-16">
       {/* Left Side - Image */}
       <div className="px-4">
         <Image
@@ -46,18 +46,18 @@ export default function Team() {
 
       {/* Right Side - Details */}
       <div className="flex-1 md:ml-6 mt-4 md:mt-0 text-center md:text-left pt-4">
-        <h2 className="text-2xl font-bold text-gray-800">DOC: CEO and CTO</h2>
+        <h2 className="text-2xl font-semibold text-gray-800">Professor Who </h2>
         <p className="text-lg text-gray-600">CEO, Quantum HashLink</p>
         <p className="text-sm text-gray-500 mt-2">
           A visionary leader with 15+ years in the tech industry, driving
           innovation and business growth.
         </p>
         <div className="flex justify-center md:justify-start space-x-4 mt-3">
-          <a href="#" className="text-primary">
-            LinkedIn
+          <a href="#"target="_blank" className="text-xl text-blue-400">
+          <FaLinkedin />
           </a>
-          <a href="#" className="text-primary">
-            Twitter
+          <a href="#"target="_blank" className="text-xl text-blue-400">
+          <FaTwitter />
           </a>
         </div>
       </div>
