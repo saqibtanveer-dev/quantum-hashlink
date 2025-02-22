@@ -39,14 +39,14 @@ const Hero = () => {
                   alt="Main Hero"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-lg shadow-lg"
+                  className="rounded-lg shadow-lg border border-red-500"
                 />
                 <Image
                   src="/images/blog/blog-02.jpg"
                   alt="Extra"
                   layout="fill"
                   objectFit="cover"
-                  className="absolute bottom-0 left-0 w-24 h-24 rounded-lg shadow-md transform -translate-x-20 translate-y-8"
+                  className="absolute bottom-0 left-0 w-24 h-24 rounded-lg shadow-md transform -translate-x-20 translate-y-8 border border-red-500"
                 />
               </div>
             </div>
