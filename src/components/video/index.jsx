@@ -31,7 +31,7 @@ const Video = () => {
                   <button
                     aria-label="video play button"
                     onClick={() => setOpen(true)}
-                    className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
+                    className="flex h-[70px] w-[70px] items-center justify-center cursor-pointer z-10 rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100"
                   >
                     <svg
                       width="16"
@@ -51,7 +51,7 @@ const Video = () => {
 
     <div className="absolute h-full w-full flex items-center justify-center">
       <ModalVideo
-        classNames={"top-[50%]"} 
+        allowFullScreen
         channel="youtube"
         autoplay={true}
         start={true}

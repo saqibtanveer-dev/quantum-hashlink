@@ -6,9 +6,9 @@ function Customtypewriter() {
   return (
     <Typewriter
       words={[
-        "Innovative Solutions",
+        "Innovative Solution",
         "Secure Transactions",
-        "AI-Powered Systems",
+        "AI-Powered System",
       ]}
       loop={true}
       cursor

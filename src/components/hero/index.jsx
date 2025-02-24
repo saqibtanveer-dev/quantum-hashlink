@@ -1,18 +1,19 @@
 import Image from "next/image";
 import Customtypewriter from "./Customtypewriter";
+import HeroImages from "./HeroImages";
 
 const Hero = () => {
   return (
     <>
       <section
         id="home"
-        className="relative flex justify-center z-10 overflow-hidden bg-white pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[80px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px] px-0 sm:px-12"
+        className="relative flex justify-center z-10 overflow-hidden bg-white pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[80px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px] px-0 md:px-8 lg:px-12"
       >
         <div className="container max-w-[1100px]">
           <div className="flex flex-wrap">
             <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-end">
               <div className="mx-auto max-w-[600px] text-start">
-                <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-5xl md:leading-tight">
+                <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-4xl lg:text-5xl md:leading-tight">
                   Quantum HashLink |<br/>
                   <Customtypewriter
                     words={[
@@ -34,20 +35,7 @@ const Hero = () => {
                 </p>
               </div> 
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 col-span-1 lg:block transform translate-x-[25%] lg:translate-x-0 translate-y-0 lg:translate-y-16 -mt-12 sm:mt-0">
-                <Image
-                  src="/images/blog/blog-01.jpg"
-                  alt="Main Hero"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-lg border border-red-500"
-                />
-                <Image
-                  src="/images/blog/blog-02.jpg"
-                  alt="Extra"
-                  layout="fill"
-                  objectFit="cover"
-                  className="absolute bottom-0 left-0 w-24 h-24 rounded-lg shadow-md transform -translate-x-20 translate-y-8 border border-red-500"
-                />
+                <HeroImages />
               </div>
             </div>
           </div>
