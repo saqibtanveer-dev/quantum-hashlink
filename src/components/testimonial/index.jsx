@@ -1,11 +1,20 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import SectionTitle from '../Common/SectionTitle'
 
 function Testimonial() {
   return (
-    <div style={{ perspective: "1000px" }} className="flex justify-center gap-8 py-8 px-4 lg:px-12 text-gray-200 py-12
-    ">
+    <section
+      className='py-16'
+    >
+    <SectionTitle
+        title="What Other Say"
+        paragraph="Don't take our words, take their's"
+        center
+        mb='30px'
+     />
+    <div style={{ perspective: "1000px" }} className="flex justify-center gap-8 px-4 lg:px-12 text-gray-200">
       {/* Left Card - Tilted Left */}
       <motion.div
         className="h-96 w-80 p-4 shadow-md bg-pink-500 rounded-xl"
@@ -48,6 +57,7 @@ function Testimonial() {
       <p className="mt-4">As artificial intelligence is getting better with each passing day, it is supercharging audio deepfakes and causing robocall scams, financial frauds, voice cloning, and more</p>
       </motion.div>
     </div>
+    </section>
   )
 }
 
