@@ -12,7 +12,7 @@ const Projects = () => {
 
   return (
     <>
-      <section className="py-8 md:py-10 lg:py-14">
+      <section id="projects" className="py-8 md:py-10 lg:py-14">
         <div className="container mx-auto">
           <div className="flex flex-wrap">
             <div className="w-full px-4">

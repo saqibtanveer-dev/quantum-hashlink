@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Customtypewriter from "./Customtypewriter";
 import HeroImages from "./HeroImages";
 
@@ -35,18 +34,18 @@ const Hero = () => {
                   technology that grows with you.
                 </p>
                 <div className="sm:flex justify-center sm:justify-start gap-4 hidden">
-                  <Link
+                  <a
                     href="#contact"
                     className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition bg-primary rounded-md hover:bg-opacity-90"
                   >
                     Get Started
-                  </Link>
-                  <Link
-                    href="#services"
+                  </a>
+                  <a
+                    href="#projects"
                     className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary border border-primary rounded-md hover:bg-primary hover:text-white transition"
                   >
                     Explore Services
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 col-span-1 lg:block transform translate-x-[25%] lg:translate-x-0 translate-y-0 lg:translate-y-16 -mt-12 sm:mt-0">
