@@ -48,7 +48,7 @@ const Header = () => {
         }`}
       >
         <div className="">
-          <div className="relative container w-[100vw] -mx-4 lg:px-20 flex items-center justify-between gap-8">
+          <div className="relative container w-[100vw] lg:px-0 flex items-center justify-between gap-8">
               <div className="">
               <Link
                 href="/"

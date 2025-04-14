@@ -49,6 +49,21 @@ export default {
       dropShadow: {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
       },
+      keyframes: {
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) scale(0.95)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)",
+          },
+        },
+      },
+      animation: {
+        "fade-in-up": "fade-in-up 0.8s ease-out forwards",
+      },
     },
   },
   plugins: [],

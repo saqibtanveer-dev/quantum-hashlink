@@ -10,11 +10,11 @@ const Video = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <section className="relative z-10 py-16 md:py-20 lg:py-28 flex justify-center">
+    <section className="relative z-10 py-8 md:py-10 lg:py-14 flex justify-center">
       <div className="container">
         <SectionTitle
           title="We are ready to help"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="We are a passionate team of developers, designers, and problem-solvers building impactful digital products. As a fresh tech startup, we bring energy, agility, and innovation to every project. Our goal is to help businesses thrive in the digital age with smart software solutions."
           center
           mb="80px"
         />
@@ -56,7 +56,7 @@ const Video = () => {
         autoplay={true}
         start={true}
         isOpen={isOpen}
-        videoId="L61p2uyiMSo"
+        videoId="jDLuJLoaA_g"
         onClose={() => setOpen(false)}
       />
     </div>

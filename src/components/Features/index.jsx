@@ -5,7 +5,7 @@ import featuresData from "./featuresData";
 const Features = () => {
   return (
     <>
-      <section id="features" className="relative flex justify-center py-16 md:py-20 lg:py-28 bg-white">
+      <section id="features" className="relative flex justify-center py-8 md:py-10 lg:py-14 bg-white">
         <div className="container">
           <SectionTitle
             title="Main Features"

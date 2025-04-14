@@ -9,14 +9,14 @@ export const metadata = {
 const Blog = () => {
   return (
     <>
+        <section className="border-4 border-red-600">
       <Breadcrumb
         pageName="Blog Grid"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
       />
 
-      <section className="pb-[120px] pt-[120px] px-4 lg:px-20">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="container mx-auto pb-[120px] pt-[120px] px-4 lg:px-20 ">
+          <div className="flex flex-wrap justify-center">
             {blogData.map((blog) => (
               <div
                 key={blog.id}
@@ -27,7 +27,7 @@ const Blog = () => {
             ))}
           </div>
 
-          <div className="-mx-4 flex flex-wrap" data-wow-delay=".15s">
+          <div className="flex flex-wrap" data-wow-delay=".15s">
             <div className="w-full px-4">
               <ul className="flex items-center justify-center pt-8">
                 <li className="mx-1">

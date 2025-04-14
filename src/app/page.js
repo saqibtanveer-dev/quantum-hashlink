@@ -5,17 +5,21 @@ import Team from "@/components/team";
 import Video from "@/components/video";
 import Testimonial from "../components/testimonial";
 import Projects from "@/components/projects";
+import Cta from "@/components/cta";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Features />
-      <Team />
+      {/* <Team /> */}
       <Projects />
       <Video />
-      <Blog />
       <Testimonial />
+      <Cta />
+      <Contact />
+      <Blog />
     </>
   );
 }

@@ -6,7 +6,7 @@ const Blog = () => {
   return (
     <section
       id="blog"
-      className="bg-gray-light py-16 md:py-20 lg:py-28 flex justify-center px-4 lg:px-12"
+      className="bg-gray-light py-8 md:py-10 lg:py-14 flex justify-center px-4 lg:px-12"
     >
       <div className="container">
         <SectionTitle

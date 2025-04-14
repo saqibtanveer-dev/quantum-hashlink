@@ -12,9 +12,9 @@ const Projects = () => {
 
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
+      <section className="py-8 md:py-10 lg:py-14">
         <div className="container mx-auto">
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                 <span className="text-primary mb-2 block text-lg font-semibold">
@@ -31,7 +31,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="w-full flex flex-wrap justify-center -mx-4">
+          <div className="w-full flex flex-wrap justify-center">
             <div className="w-full px-4">
               <ul className="flex flex-wrap justify-center mb-12 space-x-1">
                 <li className="mb-1">
@@ -97,7 +97,7 @@ const Projects = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4">
+          <div className="w-full flex flex-wrap justify-around gap-4">
             <ProjectsCard
               ImageHref="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               category="Branding"
@@ -168,21 +168,21 @@ const ProjectsCard = ({
       <motion.li
         layout
         transition
-        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
+        className={` ${
           showCard === "all" || showCard === category.toLowerCase()
             ? "block"
             : "hidden"
         }`}
       >
-        <div className="relative mb-12">
+        <div className="relative mb-12 px-4 sm:px-0">
           <div className="overflow-hidden rounded-[10px]">
-            <img src={ImageHref} alt="Projects" className="w-full h-96" />
+            <img src={ImageHref} alt="Projects" className="w-96 h-80" />
           </div>
-          <div className="relative z-10 mx-7 -mt-20 rounded-lg bg-white py-[34px] px-3 text-center shadow-lg">
-            <span className="text-primary mb-2 block text-sm font-medium">
+          <div className="relative w-80 z-10 mx-7 -mt-20 rounded-lg bg-white py-[24px] px-3 text-center shadow-lg">
+            <span className="text-primary mb-1 block text-sm font-medium">
               {category}
             </span>
-            <h3 className="text-dark mb-5 text-xl font-bold">{title}</h3>
+            <h3 className="text-dark mb-3 text-xl font-bold">{title}</h3>
             <a
               href={buttonHref}
               className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke py-[10px] px-7 text-sm font-medium transition hover:text-white"

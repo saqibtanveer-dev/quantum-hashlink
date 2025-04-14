@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import Customtypewriter from "./Customtypewriter";
 import HeroImages from "./HeroImages";
 
@@ -7,14 +7,14 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative flex justify-center z-10 overflow-hidden bg-white pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[80px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px] px-0 md:px-8 lg:px-12"
+        className="relative flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
       >
-        <div className="container max-w-[1100px]">
+        <div className="container px-4 sm:px-12 lg:px-8 py-20">
           <div className="flex flex-wrap">
             <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-end">
               <div className="mx-auto max-w-[600px] text-start">
                 <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-4xl lg:text-5xl md:leading-tight">
-                  Quantum HashLink |<br/>
+                  Quantum HashLink |<br />
                   <Customtypewriter
                     words={[
                       "Innovative Solutions",
@@ -27,13 +27,28 @@ const Hero = () => {
                     typeSpeed={80}
                     deleteSpeed={50}
                     delaySpeed={2000}
-                  />
-                </h1>
-                <p className="mb-12 text-center sm:text-left text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
-                  We are a Digital Company that turns your idea into reality.
-                  Quantum HashLink provide IT solutions.
+                    />
+                  </h1>
+                <p className="mb-12 w-96 sm:w-auto text-center sm:text-left text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
+                  We build modern, scalable, and efficient software tailored to
+                  your business goals. From startups to enterprises — we craft
+                  technology that grows with you.
                 </p>
-              </div> 
+                <div className="sm:flex justify-center sm:justify-start gap-4 hidden">
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition bg-primary rounded-md hover:bg-opacity-90"
+                  >
+                    Get Started
+                  </Link>
+                  <Link
+                    href="#services"
+                    className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary border border-primary rounded-md hover:bg-primary hover:text-white transition"
+                  >
+                    Explore Services
+                  </Link>
+                </div>
+              </div>
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 col-span-1 lg:block transform translate-x-[25%] lg:translate-x-0 translate-y-0 lg:translate-y-16 -mt-12 sm:mt-0">
                 <HeroImages />
               </div>
