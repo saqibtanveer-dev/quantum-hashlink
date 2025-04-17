@@ -26,7 +26,7 @@ function ContactForm() {
     if ("name" in fieldValues) {
       errors.name =
         fieldValues.name.trim().length < 3
-          ? "Name must be at least 2 characters long"
+          ? "Name must be at least 3 characters long"
           : "";
     }
     if ("email" in fieldValues) {
@@ -40,8 +40,8 @@ function ContactForm() {
     }
     if ("message" in fieldValues) {
       errors.message =
-        fieldValues.message.trim().length < 5
-          ? "Message must be at least 5 characters"
+        fieldValues.message.trim().length < 20
+          ? "Message must be at least 20 characters"
           : "";
     }
 
@@ -87,7 +87,7 @@ function ContactForm() {
           (error) => {
             console.log("FAILED...", error);
             setState({
-              success: "something went wrong!",
+              success: false,
               errors: initialState.errors,
             });
           }
@@ -129,7 +129,7 @@ function ContactForm() {
         error={state.errors.email}
       />
       <ContactInputBox
-        type="text"
+        type="number"
         name="phone"
         placeholder="Your Phone"
         value={formData.phone}
@@ -190,6 +190,9 @@ function ContactForm() {
         {state.success && (
           <p className="text-green-600 mt-4 text-center">{state.success}</p>
         )}
+        {
+          state.success === false && <p className="text-red-600 mt-4 text-center">Something went wrong!</p>
+        }
       </div>
     </form>
   );
