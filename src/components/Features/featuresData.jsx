@@ -34,7 +34,7 @@ const featuresData = [
       "We craft tailored software solutions to meet unique business needs, helping companies streamline operations, boost productivity, and scale effectively with clean, reliable code.",
   },
   {
-    id: 1,
+    id: 2,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -49,7 +49,7 @@ const featuresData = [
       "Our team designs and develops responsive, high-performance apps that deliver seamless user experiences across all platforms — from Android and iOS to the modern web.",
   },
   {
-    id: 1,
+    id: 3,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -64,7 +64,7 @@ const featuresData = [
       "We integrate artificial intelligence and automation to simplify workflows, improve decision-making, and empower businesses to operate smarter, faster, and more efficiently in competitive environments.",
   },
   {
-    id: 1,
+    id: 4,
     icon: (
       <svg width="40" height="42" viewBox="0 0 40 42" className="fill-current">
         <path
@@ -79,7 +79,7 @@ const featuresData = [
       "We build intuitive, user-centric interfaces that enhance usability and engagement, ensuring your product not only looks great but also performs with purpose and clarity.",
   },
   {
-    id: 1,
+    id: 5,
     icon: (
       <svg width="40" height="40" viewBox="0 0 40 40" className="fill-current">
         <path
@@ -94,7 +94,7 @@ const featuresData = [
       "We help businesses scale with secure, flexible cloud solutions and DevOps practices, improving deployment speed, system reliability, and operational efficiency through automation and monitoring.",
   },
   {
-    id: 1,
+    id: 6,
     icon: (
       <svg width="40" height="45" viewBox="0 0 40 45" className="fill-current">
         <path
