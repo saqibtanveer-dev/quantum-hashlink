@@ -7,11 +7,11 @@ import SectionTitle from "../Common/SectionTitle";
 import Link from "next/link";
 
 const teamMembers = [
-  { id: 1, name: "John Doe", role: "CEO", image: "/images/blog/blog-01.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 2, name: "Jane Smith", role: "CTO", image: "/images/blog/blog-01.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 3, name: "Michael Brown", role: "Lead Dev", image: "/images/blog/blog-01.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 4, name: "Emily Johnson", role: "Designer", image: "/images/blog/blog-01.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 5, name: "David Wilson", role: "Project Manager", image: "/images/blog/blog-01.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" }
+  { id: 2, name: "Waqar Ul Wahab", role: "CTO", image: "/images/team/waqar.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 1, name: "Syed Tashfeen Haider", role: "CFO & HR", image: "/images/team/tashfeen.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 3, name: "Mudassir Sami", role: "IT Manager", image: "/images/team/mudassir.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 4, name: "Jareer Bai", role: "COO", image: "/images/team/jareer.png", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 5, name: "Saqib Tanveer", role: "Project Manager", image: "/images/team/saqibtanveer.jpeg", size: "large", linkedin: "#", twitter: "#", github: "#" }
 ];
 
 export default function Team() {
