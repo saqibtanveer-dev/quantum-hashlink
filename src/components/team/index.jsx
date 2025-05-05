@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaTwitter, FaGithub, FaArrowRight, FaGofore, FaLowVision, FaVimeoSquare, FaExternalLinkAlt } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaGithub, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import Link from "next/link";
@@ -10,9 +10,14 @@ const teamMembers = [
   { id: 2, name: "Waqar Ul Wahab", role: "CTO", image: "/images/team/waqar.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
   { id: 1, name: "Syed Tashfeen Haider", role: "CFO & HR", image: "/images/team/tashfeen.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
   { id: 3, name: "Mudassir Sami", role: "IT Manager", image: "/images/team/mudassir.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 4, name: "Jareer Bai", role: "COO", image: "/images/team/jareer.png", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 5, name: "Saqib Tanveer", role: "Project Manager", image: "/images/team/saqibtanveer.jpeg", size: "large", linkedin: "#", twitter: "#", github: "#" }
+  { id: 4, name: "Muhammad Jareer", role: "COO", image: "/images/team/jareer.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 5, name: "Saqib Tanveer", role: "CPM", image: "/images/team/saqibtanveer.jpeg", size: "large", linkedin: "#", twitter: "#", github: "#" }
 ];
+
+const interness = [
+  { id: 1, name: "Touqeer Ahmed", role: "Android Developer", image: "/images/team/touqeer2.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 2, name: "Daniyal Ahmad", role: "Wordpress Developer", image: "/images/team/danial2.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+]
 
 export default function Team() {
   const scrollRef1 = useRef(null);
@@ -25,18 +30,6 @@ export default function Team() {
       scrollRef1.current.scrollTo({ left: scrollLeft + (direction === "left" ? -scrollAmount : scrollAmount), behavior: "smooth" });
     }
   };
-
-  useEffect(() => {
-    if(scrollRef1 && scrollRef1.current && window.innerWidth < 400){
-      const { scrollLeft, clientWidth } = scrollRef1.current;
-      scrollRef1.current.scrollTo({left: clientWidth/2 + 35})
-    }
-    if(scrollRef2 && scrollRef2.current && window.innerWidth < 400){
-      const { scrollLeft, clientWidth } = scrollRef2.current;
-      scrollRef2.current.scrollTo({left: clientWidth/2 + 35})
-    }
-  })
-  
 
   return (
     <section className="py-16 md:py-20 lg:py-28 bg-gray-light relative flex justify-center">
@@ -120,12 +113,13 @@ export default function Team() {
               </motion.div>
             ))}
           </div>
-          {/* Scrollable Team Members */}
+
+          {/* Scrollable 2 Team Members */}
           <div ref={scrollRef2} className="flex space-x-6 overflow-x-scroll no-scrollbar scroll-smooth">
-            {teamMembers.map((member, index) => (
+            {interness.map((member, index) => (
               <motion.div
                 key={member.id}
-                className={`relative min-w-56 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all 
+                className={`relative min-w-48 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all
                 ${member.size === "large" ? "col-span-1 row-span-2 w-64 h-36" : 
                    member.size === "horizontal" ? "col-span-2 row-span-1 w-64 h-48" : 
                    member.size === "medium" ? "w-52 h-72" : 

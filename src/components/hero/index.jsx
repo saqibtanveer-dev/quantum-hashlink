@@ -6,12 +6,12 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[150px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
+        className="relative flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[100px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
       >
         <div className="container px-4 sm:px-12 lg:px-8 py-20">
           <div className="flex flex-wrap">
             <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-end">
-              <div className="mx-auto max-w-[600px] text-start">
+              <div className="max-w-[600px] text-start">
                 <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-4xl lg:text-5xl md:leading-tight">
                   Quantum HashLink |<br />
                   <Customtypewriter
@@ -28,7 +28,7 @@ const Hero = () => {
                     delaySpeed={2000}
                     />
                   </h1>
-                <p className="mb-12 w-96 sm:w-auto text-center sm:text-left text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
+                <p className="mb-12 w-96 sm:w-auto text-center sm:justify-center sm:text-left px-8 sm:px-0 text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
                   We build modern, scalable, and efficient software tailored to
                   your business goals. From startups to enterprises — we craft
                   technology that grows with you.
