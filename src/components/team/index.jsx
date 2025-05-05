@@ -15,8 +15,8 @@ const teamMembers = [
 ];
 
 const interness = [
-  { id: 1, name: "Touqeer Ahmed", role: "Android Developer", image: "/images/team/touqeer2.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 2, name: "Daniyal Ahmad", role: "Wordpress Developer", image: "/images/team/danial2.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
+  { id: 1, name: "Touqeer Ahmed", role: "Android Developer", image: "/images/team/touqeer2.jpg", linkedin: "#", twitter: "#", github: "#" },
+  { id: 2, name: "Daniyal Ahmad", role: "Wordpress Developer", image: "/images/team/danial2.jpg", linkedin: "#", twitter: "#", github: "#" },
 ]
 
 export default function Team() {
@@ -82,7 +82,7 @@ export default function Team() {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.id}
-                className={`relative min-w-48 lg:min-w-56 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all col-span-1 row-span-2 w-48 h-80 lg:w-64 lg:h-96`}
+                className={`relative min-w-48 lg:min-w-56 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all col-span-1 row-span-2 w-48 h-80 lg:w-64 lg:h-[354px]`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
@@ -119,11 +119,7 @@ export default function Team() {
             {interness.map((member, index) => (
               <motion.div
                 key={member.id}
-                className={`relative min-w-48 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all
-                ${member.size === "large" ? "col-span-1 row-span-2 w-64 h-36" : 
-                   member.size === "horizontal" ? "col-span-2 row-span-1 w-64 h-48" : 
-                   member.size === "medium" ? "w-52 h-72" : 
-                   "w-40 h-56"}`}
+                className={`relative min-w-48 lg:min-w-48 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all w-48 lg:w-56`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
