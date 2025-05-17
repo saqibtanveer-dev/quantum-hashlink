@@ -2,7 +2,6 @@ import { z } from 'zod';
 
 export const enrollmentSchema = z.object({
   name: z.string().min(3, "Name is required"),
-  email: z.string().email("Invalid email"),
   contact: z
     .string()
     .regex(/^\d{10,}$/, "Phone number must be at least 10 digits"),
