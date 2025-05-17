@@ -6,7 +6,7 @@ const menuData = [
     newTab: false,
   },
   {
-    id: 33,
+    id: 2,
     title: "Blog",
     path: "/blog",
     newTab: false,
@@ -17,5 +17,11 @@ const menuData = [
     path: "/contact",
     newTab: false,
   },
+  {
+    id: 4,
+    title: "Enroll Now",
+    path: "/enrollment",
+    newTab: false
+  }
 ];
 export default menuData;

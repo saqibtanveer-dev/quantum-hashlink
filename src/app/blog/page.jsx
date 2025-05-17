@@ -9,7 +9,7 @@ export const metadata = {
 const Blog = () => {
   return (
     <>
-        <section className="border-4 border-red-600">
+        <section className="">
       <Breadcrumb
         pageName="Blog Grid"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
