@@ -148,15 +148,11 @@ export default function CourseEnrollment() {
     try {
       const parseResult = enrollmentSchema.safeParse(formData);
       if (!parseResult.success) {
-        console.log("validation error");
         const errors = parseResult.error.flatten().fieldErrors;
-        console.log(errors);
         setFieldErrors(errors);
         return;
       }
-      console.log("parse results succeded");
-
-      const rawResponse = await fetch("http://localhost:3000/api/enrollment", {
+      const rawResponse = await fetch(`/api/enrollment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
