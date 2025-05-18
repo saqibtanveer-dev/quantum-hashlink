@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Customtypewriter from "./Customtypewriter";
 import HeroImages from "./HeroImages";
 
@@ -10,7 +11,7 @@ const Hero = () => {
       >
         <div className="container px-4 sm:px-12 lg:px-8 py-20">
           <div className="flex flex-wrap">
-            <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-end">
+            <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-center">
               <div className="max-w-[600px] text-start">
                 <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-4xl lg:text-5xl md:leading-tight">
                   Quantum HashLink |<br />
@@ -48,8 +49,9 @@ const Hero = () => {
                   </a>
                 </div>
               </div>
-              <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 col-span-1 lg:block transform translate-x-[25%] lg:translate-x-0 translate-y-0 lg:translate-y-16 -mt-12 sm:mt-0">
-                <HeroImages />
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] col-span-1 lg:block -mt-12 sm:mt-0">
+                {/* <HeroImages /> */}
+                <Image src="/images/hero/9796308.png" fill />
               </div>
             </div>
           </div>
