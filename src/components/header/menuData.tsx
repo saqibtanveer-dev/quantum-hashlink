@@ -19,7 +19,7 @@ const menuData = [
   },
   {
     id: 4,
-    title: "Enroll Now",
+    title: "Courses",
     path: "/enrollment",
     newTab: false
   }
