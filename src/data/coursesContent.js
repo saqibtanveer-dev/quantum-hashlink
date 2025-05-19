@@ -1,4 +1,4 @@
-export const courses = [
+export const courseDetails = [
   {
     "id": "python",
     "title": "Python Programming",

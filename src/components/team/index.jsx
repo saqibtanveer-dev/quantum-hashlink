@@ -1,23 +1,13 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaTwitter, FaGithub, FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
+import { teamMembersData } from "@/data/teamMembersData";
+import { interneesData } from "@/data/interneesData";
 import Link from "next/link";
 
-const teamMembers = [
-  { id: 2, name: "Waqar Ul Wahab", role: "CTO", image: "/images/team/waqar.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 1, name: "Syed Tashfeen Haider", role: "CFO & HR", image: "/images/team/tashfeen.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 3, name: "Mudassir Sami", role: "IT Manager", image: "/images/team/mudassir.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 4, name: "Muhammad Jareer", role: "COO", image: "/images/team/jareer.jpg", size: "large", linkedin: "#", twitter: "#", github: "#" },
-  { id: 5, name: "Saqib Tanveer", role: "CPM", image: "/images/team/saqibtanveer.jpeg", size: "large", linkedin: "#", twitter: "#", github: "#" }
-];
-
-const interness = [
-  { id: 1, name: "Touqeer Ahmed", role: "Android Developer", image: "/images/team/touqeer2.jpg", linkedin: "#", twitter: "#", github: "#" },
-  { id: 2, name: "Daniyal Ahmad", role: "Wordpress Developer", image: "/images/team/danial2.jpg", linkedin: "#", twitter: "#", github: "#" },
-]
 
 export default function Team() {
   const scrollRef1 = useRef(null);
@@ -36,7 +26,7 @@ export default function Team() {
       <div className="container px-4 lg:px-6 text-center">
         <SectionTitle
           title="Meet Our Team"
-          paragraph={<p>The creative minds behind <Link href="#" className="text-primary underline">Quantum HashLink</Link></p>}
+          paragraph={<>The creative minds behind <Link href="#" className="text-primary underline">Quantum HashLink</Link></>}
           center
         />
 
@@ -79,7 +69,7 @@ export default function Team() {
 
           {/* Scrollable Team Members */}
           <div ref={scrollRef1} className="flex space-x-6 overflow-x-scroll no-scrollbar scroll-smooth pb-8">
-            {teamMembers.map((member, index) => (
+            {teamMembersData.map((member, index) => (
               <motion.div
                 key={member.id}
                 className={`relative min-w-48 lg:min-w-56 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all col-span-1 row-span-2 w-48 h-80 lg:w-64 lg:h-[354px]`}
@@ -93,8 +83,8 @@ export default function Team() {
 
                 {/* Overlay + Social Icons */}
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-end opacity-0 hover:opacity-100 transition">
-                <Link href="/profile-member" className="absolute top-[40%]">
-                  <FaExternalLinkAlt className="text-primary" size={50} />
+                <Link href={`/team-profile/${member.id}`} className="absolute top-[40%]">
+                  <FaExternalLinkAlt className="text-primary" size={40}/>
                 </Link>
                   <div className="text-white text-lg font-bold">{member.name}</div>
                   <div className="text-gray-300 text-sm">{member.role}</div>
@@ -116,7 +106,7 @@ export default function Team() {
 
           {/* Scrollable 2 Team Members */}
           <div ref={scrollRef2} className="flex space-x-6 overflow-x-scroll no-scrollbar scroll-smooth">
-            {interness.map((member, index) => (
+            {interneesData.map((member, index) => (
               <motion.div
                 key={member.id}
                 className={`relative min-w-48 lg:min-w-48 p-2 bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-all w-48 lg:w-56`}

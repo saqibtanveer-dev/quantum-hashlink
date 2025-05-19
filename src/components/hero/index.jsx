@@ -51,7 +51,7 @@ const Hero = () => {
               </div>
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] col-span-1 lg:block -mt-12 sm:mt-0">
                 {/* <HeroImages /> */}
-                <Image src="/images/hero/9796308.png" fill />
+                <Image src="/images/hero/9796308.png" alt="hero-image" fill />
               </div>
             </div>
           </div>
