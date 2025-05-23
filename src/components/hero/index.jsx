@@ -297,6 +297,19 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
+        {/* wavy loop */}
+        <svg
+          className="absolute bottom-0"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
+          <path
+            fill="#ffffff"
+            fillOpacity="1"
+            transform="scale(-1, 1) translate(-1440, 0)"
+            d="M0,224L80,234.7C160,245,320,267,480,261.3C640,256,800,224,960,218.7C1120,213,1280,235,1360,245.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          />
+        </svg>
       </section>
     </>
   );
