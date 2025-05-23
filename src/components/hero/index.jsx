@@ -7,7 +7,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative lg:h-screen flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[100px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
+        className="relative flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[100px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
       >
         <div className="container px-4 sm:px-12 lg:px-8 py-20">
           <div className="flex flex-wrap">
@@ -27,8 +27,8 @@ const Hero = () => {
                     typeSpeed={80}
                     deleteSpeed={50}
                     delaySpeed={2000}
-                    />
-                  </h1>
+                  />
+                </h1>
                 <p className="mb-12 w-96 sm:w-auto text-center sm:justify-center sm:text-left px-8 sm:px-0 text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
                   We build modern, scalable, and efficient software tailored to
                   your business goals. From startups to enterprises — we craft
@@ -51,7 +51,7 @@ const Hero = () => {
               </div>
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] col-span-1 lg:block -mt-12 sm:mt-0">
                 {/* <HeroImages /> */}
-                <Image src="/images/hero/9796308.png" alt="hero-image" fill />
+                <Image src="/images/hero/9796308.png" fill />
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ const Hero = () => {
             </defs>
           </svg>
         </div>
-        <div className="absolute max-w-[1400px] bottom-0 left-0 z-[-1] opacity-30 lg:opacity-100">
+        <div className="absolute max-w-[1400px] bottom-28 left-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="364"
             height="201"
