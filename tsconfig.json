@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",                         // ✅ Required for path mapping
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "@/*": ["src/*"]                      // ✅ Now '@/' points to your src/ folder
     },
     "plugins": [
@@ -27,7 +28,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }

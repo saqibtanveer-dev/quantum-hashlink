@@ -1,4 +1,3 @@
-import Blog from "@/components/blog";
 import Features from "@/components/Features";
 import Hero from "@/components/hero"
 import Team from "@/components/team";
@@ -7,6 +6,7 @@ import Testimonial from "../components/testimonial";
 import Projects from "@/components/projects";
 import Cta from "@/components/cta";
 import Contact from "@/components/contact";
+import FeaturedBlogs from "@/components/blog";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <Testimonial />
       <Cta />
       <Contact />
-      <Blog />
+      <FeaturedBlogs />
     </>
   );
 }
