@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { allBlogs } from "contentlayer/generated";
+import { allBlogs, allProjects } from "contentlayer/generated";
 import { BiCalendarEdit } from "react-icons/bi";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -8,13 +8,14 @@ import remarkGfm from "remark-gfm";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const project = allProjects.find((project) => project.id === id);
+  console.log("all projects are: ", allProjects)
   return {
     title: `${project.title} | Quantum HashLink`,
-    description: project.discription,
+    description: project.description,
     keywords: project.seo.keywords,
     openGraph: {
       title: `${project.seo.title} | Quantum HashLink`,
-      description: project.seo.discription,
+      description: project.seo.description,
       url: project.seo.image,
       images: [
         {

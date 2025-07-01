@@ -61,7 +61,7 @@ function CourseCard({selectedCourse}) {
                     </svg>
                     <span className="font-semibold text-sm">Price:</span>
                     <span className="font-semibold text-sm text-pink-600">
-                      {selectedCourse.price}
+                      {selectedCourse.price} / Per Month
                     </span>
                   </li>
 

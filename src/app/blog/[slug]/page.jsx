@@ -28,9 +28,9 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.seo.title} | Quantum HashLink`,
-      description: project.seo.description,
-      images: [project.seo.image],
+      title: `${blog.seo.title} | Quantum HashLink`,
+      description: blog.seo.description,
+      images: [blog.seo.image],
     },
   };
 }

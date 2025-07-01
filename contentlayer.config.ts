@@ -1,42 +1,37 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
 
 const Seo = defineNestedType(() => ({
-        name: 'Seo',
-        fields: {
-            title: { type: 'string', required: true },
-            description: { type: 'string', required: true },
-            image: { type: 'string', required: false },
-            keywords: { type: 'list', of: { type: 'string' }, required: false },
-        },
-    }
-));
+  name: 'Seo',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    image: { type: 'string', required: false },
+    keywords: { type: 'list', of: { type: 'string' }, required: false },
+  },
+}));
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `blogs/**/*.md`,
   contentType: "markdown",
   fields: {
     slug: { type: 'string', required: true, description: 'Unique identifier for the blog post' },
     title: { type: 'string', required: true },
     excerpt: { type: 'string', required: true, description: 'A brief summary of the blog post, This will be displayed on blog card' },
     publishedAt: { type: 'date', required: true },
-    tags: { type: 'list', of: { type: 'string' }, required: true},
-    seo: {
-        type: 'nested',
-        of: Seo
-    },
-    category: { type: 'string', required: true },    
+    tags: { type: 'list', of: { type: 'string' }, required: true },
+    seo: { type: 'nested', of: Seo },
+    category: { type: 'string', required: true },
     coverImage: { type: 'string', required: false },
-    
   },
   computedFields: {
-    url: { type: 'string', resolve: (blog) => `/src/blogs/${blog._raw.flattenedPath}` },
+    url: { type: 'string', resolve: (blog) => `/src/content/${blog._raw.flattenedPath}` },
   },
-}))
+}));
 
 export const Project = defineDocumentType(() => ({
   name: 'Project',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `projects/**/*.md`,
   contentType: "markdown",
   fields: {
     id: { type: 'string', required: true, description: 'Unique identifier for the project' },
@@ -47,14 +42,14 @@ export const Project = defineDocumentType(() => ({
     technologies: { type: 'list', of: { type: 'string' }, required: true, description: 'List of technologies used in the project' },
     type: { type: 'string', required: true, description: 'Type of the project, e.g., "web", "mobile", "desktop"' },
     liveUrl: { type: 'string', required: false, description: 'URL to the live project' },
-    seo: {
-      type: 'nested',
-      of: Seo
-    }
+    seo: { type: 'nested', of: Seo }
   },
   computedFields: {
-    url: { type: 'string', resolve: (blog) => `/src/projects/${blog._raw.flattenedPath}` },
+    url: { type: 'string', resolve: (project) => `/src/content/${project._raw.flattenedPath}` },
   },
-}))
+}));
 
-export default makeSource({ contentDirPath: 'src/projects', documentTypes: [Blog, Project] })
+export default makeSource({
+  contentDirPath: 'src/content',
+  documentTypes: [Blog, Project],
+});
