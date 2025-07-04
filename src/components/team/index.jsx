@@ -46,7 +46,7 @@ export default function Team() {
 
       {/* Right Side - Details */}
       <div className="md:px-4 mt-4 md:mt-0 text-center md:text-left pt-4">
-        <h2 className="text-2xl font-semibold text-gray-800">Professor Who </h2>
+        <h2 className="text-2xl font-semibold text-gray-800">Professor Sonia Rafaqat </h2>
         <p className="text-lg text-gray-600">CEO, Quantum HashLink</p>
         <p className="text-sm text-gray-500 mt-2">
           A visionary leader with 15+ years in the tech industry, driving
