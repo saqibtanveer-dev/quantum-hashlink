@@ -109,10 +109,10 @@ export const coursesMetaData = [
       duration: "3-6 Months",
     },
     {
-      id: "cyber-security",
-      title: "Cyber Security Fundamentals",
+      id: "ethical-hacking",
+      title: "Ethical Hacking",
       description:
-        "Learn the basics of cybersecurity, including threat modeling, network security, and ethical hacking.",
+        "Comprehensive course covering fundamental to advanced ethical hacking techniques, including reconnaissance, vulnerability assessment, exploitation, web application security, and penetration testing methodologies.",
       instructor: "Abdullah",
       price: "Rs 26,000",
       prerequisites: "Basic Computer Skills",
