@@ -8,7 +8,9 @@ import CourseCard from "./CourseCard";
 import { coursesMetaData } from "@/data/coursesMetaData"; // Importing courses data
 
 export default function CourseEnrollment() {
-  const [selectedCourseId, setSelectedCourseId] = useState(coursesMetaData[0].id);
+  const [selectedCourseId, setSelectedCourseId] = useState(
+    coursesMetaData[0].id
+  );
   const [formData, setFormData] = useState({
     name: "",
     course: "",
@@ -160,7 +162,7 @@ export default function CourseEnrollment() {
                     required
                   />
                   {fieldErrors.contact && (
-                    <p className="text-red-700 pl-1">{fieldErrors.course[0]}</p>
+                    <p className="text-red-700 pl-1">{fieldErrors.contact[0]}</p>
                   )}
                 </div>
 
@@ -262,6 +264,34 @@ export default function CourseEnrollment() {
                     </p>
                   )}
                 </div>
+
+                {/* Course Select */}
+                <div>
+                  <label
+                    htmlFor="course-select"
+                    className="block mb-2 text-sm font-medium text-gray-900"
+                  >
+                    Gender
+                  </label>
+                  <select
+                    id="gender-select"
+                    value={selectedCourseId}
+                    onChange={(e) => {
+                      setFormData({ ...formData, gender: e.target.value });
+                    }}
+                    className="bg-gray-50 border border-pink-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-pink-500 focus:border-pink-500 block w-full p-2.5"
+                    required
+                  >
+                    {['Select a Gender', 'Male', 'Female'].map((c, i) => (
+                      <option key={i} value={c}>
+                        {c}
+                      </option>
+                    ))}
+                  </select>
+                  {fieldErrors.gender && (
+                    <p className="text-red-700 pl-1">{fieldErrors.gender[0]}</p>
+                  )}
+                </div>
               </div>
 
               <button
@@ -285,7 +315,7 @@ export default function CourseEnrollment() {
           </div>
 
           {/* Card on Right */}
-          <CourseCard selectedCourse={selectedCourse}/>
+          <CourseCard selectedCourse={selectedCourse} />
         </div>
       </div>
     </section>

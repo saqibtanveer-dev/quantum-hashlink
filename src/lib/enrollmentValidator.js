@@ -9,6 +9,7 @@ export const enrollmentSchema = z.object({
   dob: z.string().nonempty("Please provide you date of birth"),
   education: z.string().nonempty("Please fill in you educaton level"),
   course: z.string().nonempty("Course name is required"),
+  gender: z.string().nonempty("Please Select a Gender"),
   courseType: z.enum(["ONLINE", "PHYSICAL"], {
     required_error: "Course type is required",
     invalid_type_error: "Invalid course type",

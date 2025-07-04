@@ -3,7 +3,7 @@ export const coursesMetaData = [
       id: "all",
       title: "Select a course",
       description: "select the course to change the future",
-      instructor: "Muhammad Jareer",
+      instructor: "__",
       price: "Rs",
       prerequisites: "",
       duration: "__",
