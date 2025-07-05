@@ -14,7 +14,7 @@ export const coursesMetaData = [
       description:
         "Learn Python syntax, data structures, and fundamental programming concepts to build scripts and applications.",
       instructor: "Mdassir Sami",
-      price: "Rs 12,000",
+      price: "Rs 4,000",
       prerequisites: "Basic computer literacy",
       duration: "3-6 Months",
     },
@@ -24,7 +24,7 @@ export const coursesMetaData = [
       description:
         "Master decorators, generators, context managers, and asynchronous programming in Python.",
       instructor: "Mdassir Sami",
-      price: "Rs 18,000",
+      price: "Rs 6,000",
       prerequisites: "Python Programming",
       duration: "3-6 Months",
     },
@@ -34,7 +34,7 @@ export const coursesMetaData = [
       description:
         "Understand core JavaScript concepts including ES6+, DOM manipulation, and event handling.",
       instructor: "Saqib Tanveer",
-      price: "Rs 12,000",
+      price: "Rs 4,000",
       prerequisites: "Basic HTML & CSS",
       duration: "3-6 Months",
     },
@@ -44,7 +44,7 @@ export const coursesMetaData = [
       description:
         "Explore advanced patterns such as closures, prototypes, async/await, and design patterns in JS.",
       instructor: "Muhammad Jareer",
-      price: "Rs 18,000",
+      price: "Rs 6,000",
       prerequisites: "JavaScript Fundamentals",
       duration: "3-6 Months",
     },
@@ -54,7 +54,7 @@ export const coursesMetaData = [
       description:
         "Build full-stack applications using MongoDB, Express.js, React, and Node.js.",
       instructor: "Muhammad Jareer & Saqib Tanveer",
-      price: "Rs 24,000",
+      price: "Rs 8,000",
       prerequisites: "JavaScript Fundamentals",
       duration: "3-6 Months",
     },
@@ -64,7 +64,7 @@ export const coursesMetaData = [
       description:
         "Combine React frontend with Django REST framework to create robust web applications.",
       instructor: "Waqar Ul Wahab",
-      price: "Rs 24,000",
+      price: "Rs 8,000",
       prerequisites: "JavaScript Fundamentals, Python Programming",
       duration: "3-6 Months",
     },
@@ -74,7 +74,7 @@ export const coursesMetaData = [
       description:
         "Learn server-side rendering, dynamic routing, and API routes with Next.js.",
       instructor: "Saqib Tanveer",
-      price: "Rs 16,000",
+      price: "Rs 6,000",
       prerequisites: "React for Beginners",
       duration: "3-6 Months",
     },
@@ -84,7 +84,7 @@ export const coursesMetaData = [
       description:
         "Introduction to machine learning algorithms, data preprocessing, and model evaluation using scikit-learn.",
       instructor: "Waqar Ul Wahab & Mdassir Sami",
-      price: "Rs 24,000",
+      price: "Rs 8,000",
       prerequisites: "Python Programming, Basic Statistics",
       duration: "3-6 Months",
     },
@@ -94,7 +94,7 @@ export const coursesMetaData = [
       description:
         "Create cross-platform mobile applications using React Native and deploy them to Android devices.",
       instructor: "Muhammad Jareer",
-      price: "Rs 20,000",
+      price: "Rs 7,000",
       prerequisites: "JavaScript Fundamentals",
       duration: "3-6 Months",
     },
@@ -104,7 +104,7 @@ export const coursesMetaData = [
       description:
         "Implement CI/CD pipelines, containerization with Docker, and infrastructure as code using Terraform.",
       instructor: "Waqar Ul Wahab",
-      price: "Rs 24,000",
+      price: "Rs 8,000",
       prerequisites: "Basic Linux, Version Control (Git)",
       duration: "3-6 Months",
     },
@@ -114,7 +114,7 @@ export const coursesMetaData = [
       description:
         "Comprehensive course covering fundamental to advanced ethical hacking techniques, including reconnaissance, vulnerability assessment, exploitation, web application security, and penetration testing methodologies.",
       instructor: "Abdullah",
-      price: "Rs 26,000",
+      price: "Rs 9,000",
       prerequisites: "Basic Computer Skills",
       duration: "3-6 Months",
     },

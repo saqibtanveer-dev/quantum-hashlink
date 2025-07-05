@@ -51,18 +51,18 @@ const Header = () => {
               <div className="">
               <Link
                 href="/"
-                className={`header-logo flex items-center justify-center  ${
+                className={`header-logo ml-4 sm:ml-0 flex items-center justify-center  ${
                   sticky ? "py-5 lg:py-2" : "py-8"
-                } `}
+                }`}
               >
                 <Image
-                  src="/qhl_logo.png"
+                  src="/qhl_logo_no_text.png"
                   alt="logo"
-                  width={100}
-                  height={100}
-                  className="-mb-10"
+                  width={50}
+                  height={50}
+                  className="bg-transparent"
                 />
-              <p className="font-bold hidden lg:block">Quantum HashLink</p>
+              <p className="font-bold hidden lg:block">uantum HashLink</p>
               </Link>
               </div>
               <div className="">

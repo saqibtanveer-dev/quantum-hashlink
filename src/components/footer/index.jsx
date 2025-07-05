@@ -21,8 +21,7 @@ const Footer = () => {
                   <p className="mt-[15px] font-bold">Quantum_HashLink</p>
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                  Jadoon Hostel, University Road, Near University Of Haripur.
                 </p>
                 <div className="flex items-center">
                   <a
