@@ -13,6 +13,7 @@
     "@formkit/auto-animate": "^0.8.2",
     "contentlayer": "^0.3.4",
     "framer-motion": "^12.4.0",
+    "lru-cache": "^11.2.5",
     "mongodb": "^6.16.0",
     "next": "15.1.6",
     "next-contentlayer": "^0.3.4",

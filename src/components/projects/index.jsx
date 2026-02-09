@@ -176,7 +176,7 @@ const ProjectsCard = ({
       >
         <div className="relative mb-12 px-4 sm:px-0">
           <div className="overflow-hidden rounded-[10px]">
-            <img src={ImageHref} alt="Projects" className="w-96 h-80" />
+            <Image src={ImageHref} alt="Projects" width={384} height={320} className="w-96 h-80 object-cover" />
           </div>
           <div className="flex justify-center">
             <div className="relative w-[90%] sm:w-80 z-10 -mt-20 rounded-lg bg-white py-[24px] px-12 text-center shadow-lg">

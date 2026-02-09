@@ -1,5 +1,5 @@
 // components/TeamProfileCard.jsx
-import { teamMembersCVData } from "@/data/teamMembersCVData";
+import { teamMembersCVData } from "@/data/team";
 import Image from "next/image";
 import {
   FaEnvelope,
@@ -23,8 +23,8 @@ export default async function TeamProfileCard({ params }) {
     <Image
       src={member.image}
       alt={`Photo of ${member.name}`}
-      layout="fill"
-      objectFit="cover"
+      fill
+      style={{ objectFit: 'cover' }}
       className="grayscale-0"
     />
   </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { allBlogs, allProjects } from "contentlayer/generated";
+import { allProjects } from "contentlayer/generated";
 import { BiCalendarEdit } from "react-icons/bi";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -8,7 +8,9 @@ import remarkGfm from "remark-gfm";
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const project = allProjects.find((project) => project.id === id);
-  console.log("all projects are: ", allProjects)
+  if (!project) {
+    return { title: 'Project Not Found | Quantum HashLink' };
+  }
   return {
     title: `${project.title} | Quantum HashLink`,
     description: project.description,
@@ -34,18 +36,30 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const BlogDetail = async ({ params }) => {
+const ProjectDetail = async ({ params }) => {
   const { id } = await params;
-  const project = allBlogs.find((project) => project.id === id);
+  const project = allProjects.find((p) => p.id === id);
+
+  if (!project) {
+    return (
+      <section className="pb-[120px] pt-[150px] flex justify-center">
+        <div className="container text-center">
+          <h2 className="text-3xl font-bold">Project Not Found</h2>
+          <p className="mt-4 text-body-color">The project you are looking for does not exist.</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <>
-      <section className="pb-[120px] pt-[150px] border-4 flex justify-center">
+      <section className="pb-[120px] pt-[150px] flex justify-center">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 lg:w-8/12">
               <div>
                 <h2 className="mb-8 text-3xl font-bold leading-tight text-black sm:text-4xl sm:leading-tight">
-                  {blog.title}
+                  {project.title}
                 </h2>
                 <div className="flex flex-wrap items-center justify-between border-b border-body-color border-opacity-10 pb-4 dark:border-white dark:border-opacity-10">
                   <div className="flex flex-wrap items-center">
@@ -67,13 +81,13 @@ const BlogDetail = async ({ params }) => {
                 </div>
                 <div>
                   <p className="mb-10 text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                    {blog.excerpt}
+                    {project.excerpt || project.description}
                   </p>
                   <div className="mb-10 w-full overflow-hidden rounded">
                     <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
                       <Image
-                        src={`${blog.coverImage}`}
-                        alt="cover image"
+                        src={project.coverImage || '/images/blog/blog-01.jpg'}
+                        alt={project.title}
                         fill
                         className="object-cover object-center"
                       />
@@ -182,9 +196,8 @@ const BlogDetail = async ({ params }) => {
                       ),
                     }}
                   >
-                    {blog.body.raw}
+                    {project.body.raw}
                   </Markdown>
-                  ;
                 </div>
               </div>
             </div>
@@ -199,4 +212,4 @@ export async function generateStaticParams() {
   return allProjects.map((project) => ({ id: project.id }));
 }
 
-export default BlogDetail;
+export default ProjectDetail;

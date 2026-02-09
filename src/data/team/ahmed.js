@@ -1,0 +1,76 @@
+export const ahmedCV = {
+  id: 1,
+  name: "Ahmed Wahab",
+  role: "Flutter Team Lead",
+  image: "/images/team/ahmed.jpeg",
+  size: "large",
+  contact: {
+    phone: "(123) 555-0123",
+    email: "ahmed@quantumhashlink.com",
+    linkedin: "https://www.linkedin.com/in/ahmed",
+    twitter: "https://twitter.com/ahmed",
+    github: "https://github.com/ahmed",
+  },
+  summary:
+    "Experienced Flutter developer and team leader with 8+ years of experience in cross-platform mobile application development. Skilled in leading development teams, architecting scalable mobile solutions, and implementing best practices in Flutter development. Passionate about creating high-performance apps with beautiful UI/UX.",
+  education: [
+    { date: "June 2012", degree: "Master of Computer Science", institution: "Lahore University of Management Sciences", location: "Lahore, Pakistan" },
+    { date: "May 2009", degree: "Bachelor of Science in Software Engineering", institution: "University of Karachi", location: "Karachi, Pakistan" },
+  ],
+  skills: [
+    "Flutter & Dart",
+    "Mobile App Architecture",
+    "State Management (Bloc, Provider)",
+    "CI/CD for Mobile Apps",
+    "Team Leadership & Mentoring",
+    "Firebase Integration",
+    "RESTful APIs",
+    "UI/UX Implementation",
+  ],
+  experience: [
+    {
+      dateRange: "January 2020 – Present",
+      title: "Flutter Team Lead",
+      company: "Quantum HashLink",
+      location: "Karachi, Pakistan",
+      responsibilities: [
+        "Lead a team of 8 Flutter developers in building cross-platform mobile applications",
+        "Architect and implement scalable mobile solutions for enterprise clients",
+        "Establish coding standards and best practices for the Flutter development team",
+        "Mentor junior developers and conduct code reviews",
+        "Collaborate with product managers and designers to deliver high-quality apps",
+        "Optimize app performance, reducing load times by 40% across projects",
+      ],
+    },
+    {
+      dateRange: "March 2017 – December 2019",
+      title: "Senior Flutter Developer",
+      company: "TechNova Solutions",
+      location: "Lahore, Pakistan",
+      responsibilities: [
+        "Developed and maintained 10+ Flutter applications for various clients",
+        "Implemented complex state management solutions using Bloc pattern",
+        "Integrated with various backend services and third-party APIs",
+        "Improved app performance by implementing efficient data caching strategies",
+        "Contributed to open-source Flutter projects",
+      ],
+    },
+    {
+      dateRange: "June 2012 – February 2017",
+      title: "Mobile Developer",
+      company: "Global Software Solutions",
+      location: "Karachi, Pakistan",
+      responsibilities: [
+        "Developed native Android applications before transitioning to Flutter",
+        "Worked on hybrid mobile apps using Ionic and React Native",
+        "Participated in full app development lifecycle from concept to deployment",
+        "Collaborated with UI/UX designers to implement pixel-perfect interfaces",
+      ],
+    },
+  ],
+  projects: [
+    { name: "E-Commerce Mobile App", description: "Led development of a Flutter-based e-commerce app with 50k+ active users", technologies: ["Flutter", "Firebase", "Bloc", "Stripe API"] },
+    { name: "Healthcare Management System", description: "Cross-platform app for patient management used by 20+ clinics", technologies: ["Flutter", "Node.js", "MongoDB", "Provider"] },
+    { name: "Finance Tracker", description: "Personal finance app featured in Google Play Store's 'Best of 2022'", technologies: ["Flutter", "SQLite", "Firebase Auth", "Google Charts API"] },
+  ],
+};

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
     keywords: blog.seo.keywords,
     openGraph: {
       title: `${blog.seo.title} | Quantum HashLink`,
-      description: blog.seo.discription,
+      description: blog.seo.description,
       url: blog.seo.image,
       images: [
         {

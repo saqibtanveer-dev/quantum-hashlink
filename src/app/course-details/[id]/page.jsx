@@ -1,5 +1,5 @@
 import React from "react";
-import { courseDetails } from "@/data/coursesContent";
+import { courseDetails } from "@/data/courses";
 import { coursesMetaData } from "@/data/coursesMetaData";
 
 export default async function CourseDetailsPage({ params }) {

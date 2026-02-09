@@ -30,6 +30,7 @@ Complete project analysis reveal kiya hai ke project mein **CRITICAL ARCHITECTUR
 | `footer/index.jsx` | 397 | 🔴 CRITICAL (1.6x limit) |
 | `hero/index.jsx` | 316 | 🔴 CRITICAL (1.3x limit) |
 | `enrollment/page.jsx` | 306 | 🔴 CRITICAL (1.2x limit) |
+| `contact/ContactForm.jsx` | 255 | 🔴 OVER LIMIT (1.02x limit) |
 
 ### Technology Stack
 - **Framework**: Next.js 15.1.6 (App Router)
@@ -44,10 +45,11 @@ Complete project analysis reveal kiya hai ke project mein **CRITICAL ARCHITECTUR
 ## 🚨 SEVERITY BREAKDOWN
 
 ### 🔴 CRITICAL (Immediate Action Required)
-1. **Security**: Exposed MongoDB credentials
-2. **Code Modularity**: 6 files exceed 250 lines
-3. **SEO**: No robots.txt, sitemap, or structured data
-4. **Error Handling**: No error boundaries or 404 pages
+1. **Runtime Bugs**: `project/[id]/page.jsx` crashes (references undefined `blog` variable), Header memory leak, broken Resend import
+2. **Security**: Exposed MongoDB credentials, `.env` has plain text notes
+3. **Code Modularity**: 7 files exceed 250 lines (including ContactForm.jsx at 255)
+4. **SEO**: No robots.txt, sitemap, or structured data
+5. **Error Handling**: No error boundaries or 404 pages
 
 ### 🟡 HIGH PRIORITY
 5. **Performance**: No image optimization strategy
@@ -69,24 +71,32 @@ Complete project analysis reveal kiya hai ke project mein **CRITICAL ARCHITECTUR
 quantum-hashlink/
 ├── src/
 │   ├── app/                    # Next.js App Router
-│   │   ├── api/               # API routes (needs rate limiting)
-│   │   ├── blog/              # Blog pages (good SEO metadata)
+│   │   ├── api/enrollment/    # API route (needs rate limiting)
+│   │   ├── blog/[slug]/       # Blog detail (has SEO, has typo bug)
+│   │   ├── blogs/             # Blog list (shows only 3 blogs ❌)
+│   │   ├── contact/           # Contact page
+│   │   ├── course-details/[id]/ # Course detail
+│   │   ├── ecard/             # ⚠️ EMPTY directory
 │   │   ├── enrollment/        # 306 lines ❌
-│   │   └── layout.js          # Basic metadata only
+│   │   ├── project/[id]/      # ⚠️ CRASHES - references undefined 'blog'
+│   │   ├── team-profile/[teamId]/ # Uses deprecated Image props
+│   │   └── layout.js          # Basic metadata, imports modal CSS globally
 │   ├── components/
-│   │   ├── contact/           # 931 lines ❌ CRITICAL
-│   │   ├── footer/            # 397 lines ❌
+│   │   ├── contact/           # 931 lines ❌ CRITICAL + DUAL email systems
+│   │   ├── footer/            # 397 lines ❌ dead social links
+│   │   ├── header/            # 155 lines, has scroll listener leak
 │   │   ├── hero/              # 316 lines ❌
-│   │   ├── projects/          # 193 lines (inline SVGs)
+│   │   ├── projects/          # 193 lines, uses <img> instead of <Image>
 │   │   └── team/              # 135 lines (acceptable)
 │   ├── data/
 │   │   ├── coursesContent.js  # 1,128 lines ❌ CRITICAL
+│   │   ├── coursesMetaData.js # 121 lines (11 entries incl. placeholder)
 │   │   └── teamMembersCVData.js # 482 lines ❌
 │   └── lib/
-│       ├── mongodb.ts         # Basic connection (no pooling)
+│       ├── mongodb.ts         # Basic connection (no pooling, no options)
 │       └── enrollmentValidator.js
 ├── public/                     # Static assets (no optimization)
-├── .env                        # ⚠️ EXPOSED CREDENTIALS
+├── .env                        # ⚠️ EXPOSED CREDENTIALS + plain text notes
 └── next.config.mjs            # Basic config (needs optimization)
 ```
 
@@ -154,12 +164,15 @@ quantum-hashlink/
 
 ## ⏱️ ESTIMATED TIMELINE
 
-- **Week 1**: Critical fixes (security, file splitting, SEO basics)
-- **Week 2**: Performance optimization (images, code splitting)
-- **Week 3**: Component refactoring (reusability, modularity)
-- **Week 4**: Testing, monitoring, documentation
+- **Day 1-3**: Fix crashing bugs & broken features (15 bugs identified)
+- **Week 1**: Security fixes + SEO basics
+- **Week 2**: Code modularity (split large files)
+- **Week 3**: Performance optimization (images, code splitting)
+- **Week 4**: Architecture polish, testing, documentation
 
-**Total Estimated Time**: 3-4 weeks for complete overhaul
+**Total Estimated Time**: 4 weeks for complete overhaul
+
+> ⚠️ **NOTE**: See `07-AUDIT-CORRECTIONS.md` for the corrected priority order. Bugs MUST be fixed before any improvement work begins.
 
 ---
 
@@ -171,16 +184,23 @@ quantum-hashlink/
 4. `04-SECURITY-PRODUCTION.md` - Security and production readiness
 5. `05-ARCHITECTURE-IMPROVEMENTS.md` - Component architecture
 6. `06-ACTION-PLAN.md` - Prioritized implementation roadmap
+7. `07-AUDIT-CORRECTIONS.md` - **⚠️ READ FIRST** - Corrections, missed bugs, over-engineering warnings
 
 ---
 
 ## ⚠️ CRITICAL WARNINGS
 
-1. **DO NOT DEPLOY** to production without rotating credentials
-2. **DO NOT COMMIT** .env file to version control
-3. **IMPLEMENT** rate limiting before public API exposure
-4. **ADD** error boundaries before production deployment
-5. **SPLIT** large files before adding new features
+1. **FIX CRASHING BUGS FIRST** — `project/[id]/page.jsx` and Header memory leak
+2. **DO NOT DEPLOY** to production without rotating credentials
+3. **DO NOT COMMIT** .env file to version control
+4. **CLEAN UP** `.env` file — remove plain text notes (lines 11-16)
+5. **DECIDE** EmailJS vs Resend — remove the duplicate contact system
+6. **IMPLEMENT** rate limiting before public API exposure
+7. **ADD** error boundaries before production deployment
+8. **SPLIT** large files before adding new features
+
+> ⚠️ **IMPORTANT**: Documents 01-06 contain some over-engineered recommendations.
+> See `07-AUDIT-CORRECTIONS.md` Part 3 for items to SKIP (CSRF, CVA, Storybook, etc.)
 
 ---
 

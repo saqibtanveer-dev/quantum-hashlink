@@ -1,12 +1,14 @@
+import dynamic from "next/dynamic";
 import Features from "@/components/Features";
-import Hero from "@/components/hero"
+import Hero from "@/components/hero";
 import Team from "@/components/team";
-import Video from "@/components/video";
-import Testimonial from "../components/testimonial";
-import Projects from "@/components/projects";
 import Cta from "@/components/cta";
-import Contact from "@/components/contact";
 import FeaturedBlogs from "@/components/blog";
+
+const Video = dynamic(() => import("@/components/video"));
+const Testimonial = dynamic(() => import("../components/testimonial"));
+const Projects = dynamic(() => import("@/components/projects"));
+const Contact = dynamic(() => import("@/components/contact"));
 
 export default function Home() {
   return (
