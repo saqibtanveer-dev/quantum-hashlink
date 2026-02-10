@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 const uri = process.env.MONGODB_URI;
 
 if(!uri){
-    console.log("Connection To DB Failed, Credentials Error")
+    throw new Error("MONGODB_URI environment variable is not defined. Please check your .env file.");
 }
 
 let client: MongoClient;
@@ -14,7 +14,6 @@ declare global {
 }
 
 if(!global._mongoClientPromise){
-    console.log("no global instance")
     client = new MongoClient(uri);
     global._mongoClientPromise = client.connect();
 }

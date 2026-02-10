@@ -1,19 +1,21 @@
+import { Card, CardContent } from "@/components/ui/card";
+
 const SingleFeature = ({ feature }) => {
   const { icon, title, paragraph } = feature;
   return (
-    <div className="w-full">
-      <div className="wow fadeInUp flex flex-col justify-center items-center" data-wow-delay=".15s">
-        <div className="mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
+    <Card className="border-gray-100 shadow-sm transition hover:shadow-md hover:border-primary/20">
+      <CardContent className="p-6">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary">
           {icon}
         </div>
-        <h3 className="mb-5 text-xl font-bold text-black sm:text-2xl lg:text-xl xl:text-2xl text-center">
+        <h3 className="mb-3 text-lg font-bold text-gray-900">
           {title}
         </h3>
-        <p className="text-base font-medium leading-relaxed text-body-color text-center">
+        <p className="text-sm leading-relaxed text-body-color">
           {paragraph}
         </p>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

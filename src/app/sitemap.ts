@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
-import { allBlogs } from 'contentlayer/generated';
+import { allBlogs, allProjects } from 'contentlayer/generated';
 import { coursesMetaData } from '@/data/coursesMetaData';
+import { teamMembersData } from '@/data/teamMembersData';
 
 const BASE_URL = 'https://quantum-hashlink.com';
 
@@ -48,5 +49,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
-  return [...staticPages, ...blogPages, ...coursePages];
+  const projectPages: MetadataRoute.Sitemap = allProjects.map((project) => ({
+    url: `${BASE_URL}/project/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  const teamPages: MetadataRoute.Sitemap = teamMembersData.map((member) => ({
+    url: `${BASE_URL}/team-profile/${member.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
+  return [...staticPages, ...blogPages, ...coursePages, ...projectPages, ...teamPages];
 }

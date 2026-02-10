@@ -1,0 +1,7 @@
+node_modules
+.next
+.contentlayer
+out
+build
+dist
+pnpm-lock.yaml

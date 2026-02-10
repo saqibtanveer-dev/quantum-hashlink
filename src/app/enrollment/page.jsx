@@ -1,9 +1,7 @@
 "use client";
 import { enrollmentSchema } from "@/lib/enrollmentValidator";
 import React, { useState } from "react";
-import { IoCheckmarkDoneSharp } from "react-icons/io5";
-import { BiMailSend } from "react-icons/bi";
-import { LuLoaderCircle } from "react-icons/lu";
+import { CheckCheck, Send, Loader2 } from "lucide-react";
 import CourseCard from "./CourseCard";
 import { coursesMetaData } from "@/data/coursesMetaData"; // Importing courses data
 
@@ -18,11 +16,12 @@ export default function CourseEnrollment() {
     dob: "",
     address: "",
     education: "",
+    gender: "",
     courseType: "ONLINE",
   });
   const selectedCourse = coursesMetaData.find((c) => c.id === selectedCourseId);
   const [loading, setLoading] = useState(false);
-  const [sucessMsg, setSucessMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
   const [fieldErrors, setFieldErrors] = useState({});
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -33,8 +32,9 @@ export default function CourseEnrollment() {
 
   const handleEnroll = async (e) => {
     e.preventDefault();
-    console.log(formData);
     setLoading(true);
+    setFieldErrors({});
+    setErrorMsg("");
 
     try {
       const parseResult = enrollmentSchema.safeParse(formData);
@@ -59,7 +59,7 @@ export default function CourseEnrollment() {
       }
 
       if (response.status) {
-        setSucessMsg(response.message || "You Are Done!");
+        setSuccessMsg(response.message || "You Are Done!");
         setFormData({
           name: "",
           course: "",
@@ -67,6 +67,7 @@ export default function CourseEnrollment() {
           dob: "",
           address: "",
           education: "",
+          gender: "",
           courseType: "ONLINE",
         });
       }
@@ -78,7 +79,7 @@ export default function CourseEnrollment() {
   };
 
   return (
-    <section className="border-4 bg-gray-100 pt-[120px] pb-[120px] px-4 lg:px-20">
+    <section className="bg-gray-100 pt-[120px] pb-[120px] px-4 lg:px-20">
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-center mb-12">
           Course Enrollment
@@ -275,7 +276,7 @@ export default function CourseEnrollment() {
                   </label>
                   <select
                     id="gender-select"
-                    value={selectedCourseId}
+                    value={formData.gender}
                     onChange={(e) => {
                       setFormData({ ...formData, gender: e.target.value });
                     }}
@@ -296,24 +297,25 @@ export default function CourseEnrollment() {
 
               <button
                 type="submit"
-                className="text-white bg-gradient-to-r from-pink-400 to-pink-700 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center transition duration-300 flex items-center justify-center"
+                className="text-white bg-linear-to-r from-pink-400 to-pink-700 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center transition duration-300 flex items-center justify-center"
               >
                 {loading ? (
-                  <LuLoaderCircle className="mr-2 animate-spin w-6 h-6" />
-                ) : sucessMsg ? (
-                  <IoCheckmarkDoneSharp className="text-green-900 mr-2 w-6 h-6" />
+                  <Loader2 className="mr-2 size-6 animate-spin" />
+                ) : successMsg ? (
+                  <CheckCheck className="mr-2 size-6 text-green-900" />
                 ) : (
-                  <BiMailSend className="mr-2 w-6 h-6" />
+                  <Send className="mr-2 size-6" />
                 )}
                 {!loading
-                  ? sucessMsg
-                    ? sucessMsg
+                  ? successMsg
+                    ? successMsg
                     : "Enroll Now"
                   : "Loading..."}
               </button>
             </form>
           </div>
 
+          {/* ... */}
           {/* Card on Right */}
           <CourseCard selectedCourse={selectedCourse} />
         </div>

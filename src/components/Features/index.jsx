@@ -4,23 +4,22 @@ import featuresData from "./featuresData";
 
 const Features = () => {
   return (
-    <>
-      <section id="features" className="relative flex justify-center py-8 md:py-10 lg:py-14 bg-white">
-        <div className="container">
-          <SectionTitle
-            title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-          />
+    <section id="features" className="section-spacing bg-gray-50">
+      <div className="container mx-auto px-4 lg:px-8">
+        <SectionTitle
+          subtitle="Our Services"
+          title="What We Deliver"
+          paragraph="End-to-end technology services designed to accelerate your business growth, reduce operational costs, and give you a competitive edge."
+          center
+        />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 px-4 lg:px-12 place-items-center justify-items-center">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {featuresData.map((feature) => (
+            <SingleFeature key={feature.id} feature={feature} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

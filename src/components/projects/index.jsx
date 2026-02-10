@@ -1,199 +1,127 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import {motion} from "framer-motion"
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import SectionTitle from "../Common/SectionTitle";
+
+const projectsData = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop",
+    category: "Branding",
+    title: "TechVision Brand Identity",
+    href: "#",
+  },
+  {
+    id: 2,
+    image: "https://plus.unsplash.com/premium_photo-1683121716061-3faddf4dc504?w=500&auto=format&fit=crop&q=60",
+    category: "Marketing",
+    title: "Growth Analytics Dashboard",
+    href: "#",
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=500&auto=format&fit=crop&q=60",
+    category: "Marketing",
+    title: "E-Commerce Platform",
+    href: "#",
+  },
+  {
+    id: 4,
+    image: "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?w=500&auto=format&fit=crop&q=60",
+    category: "Development",
+    title: "SaaS Management Portal",
+    href: "#",
+  },
+  {
+    id: 5,
+    image: "https://plus.unsplash.com/premium_photo-1681426687411-21986b0626a8?w=500&auto=format&fit=crop&q=60",
+    category: "Design",
+    title: "FinTech Mobile App UI",
+    href: "#",
+  },
+  {
+    id: 6,
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60",
+    category: "Development",
+    title: "AI Content Generator",
+    href: "#",
+  },
+];
+
+const categories = ["all", "branding", "design", "marketing", "development"];
 
 const Projects = () => {
-  const [showCard, setShowCard] = useState("all");
+  const [active, setActive] = useState("all");
 
-  const handleProject = (category) => {
-    setShowCard(category);
-  };
+  const filtered =
+    active === "all"
+      ? projectsData
+      : projectsData.filter((p) => p.category.toLowerCase() === active);
 
   return (
-    <>
-      <section id="projects" className="py-8 md:py-10 lg:py-14">
-        <div className="container mx-auto">
-          <div className="flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-primary mb-2 block text-lg font-semibold">
-                  Our Projects
-                </span>
-                <h2 className="text-dark mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
-                  Our Recent Projects
-                </h2>
-                <p className="text-body-color text-base">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
-                </p>
-              </div>
-            </div>
-          </div>
+    <section id="projects" className="section-spacing">
+      <div className="container mx-auto px-4 lg:px-8">
+        <SectionTitle
+          subtitle="Our Work"
+          title="Recent Projects"
+          paragraph="A selection of projects we have delivered — from web platforms to mobile apps and custom enterprise solutions."
+          center
+        />
 
-          <div className="w-full flex flex-wrap justify-center">
-            <div className="w-full px-4">
-              <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("all")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "all"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    All Projects
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("branding")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "branding"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Branding
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("design")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "design"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Design
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("marketing")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "marketing"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Marketing
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("development")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "development"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Development
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="w-full flex flex-wrap justify-around gap-4">
-            <ProjectsCard
-              ImageHref="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              category="Branding"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <ProjectsCard
-              ImageHref="https://plus.unsplash.com/premium_photo-1683121716061-3faddf4dc504?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <ProjectsCard
-              ImageHref="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MXx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <ProjectsCard
-              ImageHref="https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRlY2h8ZW58MHx8MHx8fDA%3D"
-              category="Development"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <ProjectsCard
-              ImageHref="https://plus.unsplash.com/premium_photo-1681426687411-21986b0626a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D"
-              category="Design"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <ProjectsCard
-              ImageHref="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGV2fGVufDB8fDB8fHww"
-              category="Marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-          </div>
+        <div className="mb-10 flex flex-wrap justify-center gap-2">
+          {categories.map((cat) => (
+            <Button
+              key={cat}
+              variant={active === cat ? "default" : "secondary"}
+              size="sm"
+              onClick={() => setActive(cat)}
+              className="capitalize"
+            >
+              {cat === "all" ? "All Projects" : cat}
+            </Button>
+          ))}
         </div>
-      </section>
-    </>
+
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
 export default Projects;
 
-const ProjectsCard = ({
-  showCard,
-  category,
-  ImageHref,
-  title,
-  button,
-  buttonHref,
-}) => {
+const ProjectCard = ({ project }) => {
+  const { image, category, title, href } = project;
   return (
-    <>
-      <motion.li
-        layout
-        transition
-        className={`${
-          showCard === "all" || showCard === category.toLowerCase()
-            ? "block"
-            : "hidden"
-        }`}
-      >
-        <div className="relative mb-12 px-4 sm:px-0">
-          <div className="overflow-hidden rounded-[10px]">
-            <Image src={ImageHref} alt="Projects" width={384} height={320} className="w-96 h-80 object-cover" />
-          </div>
-          <div className="flex justify-center">
-            <div className="relative w-[90%] sm:w-80 z-10 -mt-20 rounded-lg bg-white py-[24px] px-12 text-center shadow-lg">
-              <span className="text-primary mb-1 block text-sm font-medium">
-                {category}
-              </span>
-              <h3 className="text-dark mb-3 text-xl font-bold">{title}</h3>
-              <a
-                href={buttonHref}
-                className="text-body-color hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke py-[10px] px-7 text-sm font-medium transition hover:text-white"
-              >
-                {button}
-              </a>
-            </div>
-          </div>
-        </div>
-      </motion.li>
-    </>
+    <Card className="group overflow-hidden border-gray-100 shadow-sm transition hover:shadow-md">
+      <div className="relative aspect-4/3 overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          width={400}
+          height={300}
+          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        />
+        <Badge className="absolute right-3 top-3 text-xs">{category}</Badge>
+      </div>
+      <CardContent className="p-6">
+        <h3 className="mb-3 text-lg font-bold text-gray-900">{title}</h3>
+        <a
+          href={href}
+          className="inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:underline"
+        >
+          View Details
+          <ArrowRight className="size-4" />
+        </a>
+      </CardContent>
+    </Card>
   );
 };

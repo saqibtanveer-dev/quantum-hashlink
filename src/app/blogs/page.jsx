@@ -4,7 +4,15 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { allBlogs } from 'contentlayer/generated'
 
 export const metadata = {
-  title: "Blog Page | Quantum HashLink like to post quality and useful content",
+  title: "Blog | Quantum HashLink",
+  description: "Insights, tutorials, and updates from the Quantum HashLink team on software development, AI, and modern technology.",
+  keywords: ['tech blog', 'software development blog', 'quantum hashlink blog', 'programming tutorials'],
+  openGraph: {
+    title: 'Blog | Quantum HashLink',
+    description: 'Insights, tutorials, and updates from the Quantum HashLink team.',
+    url: 'https://quantum-hashlink.com/blogs',
+    type: 'website',
+  },
 };
 
 const Blog = () => {
@@ -13,8 +21,8 @@ const Blog = () => {
     <>
       <section className="">
         <Breadcrumb
-          pageName="Blog Grid"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+          pageName="Our Blog"
+          description="Stay up to date with the latest insights, tutorials, and industry trends from the Quantum HashLink team."
         />
 
         <div className="container mx-auto pb-[120px] pt-[120px] px-4 lg:px-20 ">

@@ -1,63 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Customtypewriter from "./Customtypewriter";
 import HeroBackground from "./HeroBackground";
 
 const Hero = () => {
   return (
-    <>
-      <section
-        id="home"
-        className="relative flex justify-center z-10 overflow-hidden bg-gradient-to-br from-white via-pink-50 to-primary pb-16 pt-[100px] md:pb-[120px] md:pt-[200px] xl:pb-[180px] xl:pt-[100px] 2xl:pb-[200px] 2xl:pt-[110px]"
-      >
-        <div className="container px-4 sm:px-12 lg:px-8 py-20">
-          <div className="flex flex-wrap">
-            <div className="w-full px-4 grid grid-cols-1 gap-y-8 sm:gap-y-12 sm:grid-cols-2 sm:px-0 place-items-center lg:place-items-center">
-              <div className="max-w-[600px] text-start">
-                <h1 className="mb-5 text-3xl text-center sm:text-left font-bold leading-tight text-black sm:leading-tight md:text-4xl lg:text-5xl md:leading-tight">
-                  Quantum HashLink |<br />
-                  <Customtypewriter
-                    words={[
-                      "Innovative Solutions",
-                      "Secure Transactions",
-                      "AI-Powered Systems",
-                    ]}
-                    loop={true}
-                    cursor
-                    cursorStyle="_"
-                    typeSpeed={80}
-                    deleteSpeed={50}
-                    delaySpeed={2000}
-                  />
-                </h1>
-                <p className="mb-12 w-96 sm:w-auto text-center sm:justify-center sm:text-left px-8 sm:px-0 text-base !leading-relaxed text-gray-900 sm:text-lg md:text-xl">
-                  We build modern, scalable, and efficient software tailored to
-                  your business goals. From startups to enterprises — we craft
-                  technology that grows with you.
-                </p>
-                <div className="sm:flex justify-center sm:justify-start gap-4 hidden">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white transition bg-primary rounded-md hover:bg-opacity-90"
-                  >
-                    Get Started
-                  </a>
-                  <a
-                    href="#projects"
-                    className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-primary border border-primary rounded-md hover:bg-primary hover:text-white transition"
-                  >
-                    Explore Services
-                  </a>
-                </div>
-              </div>
-              <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[500px] lg:h-[500px] col-span-1 lg:block -mt-12 sm:mt-0">
-                <Image src="/images/hero/9796308.png" alt="Hero illustration" fill />
-              </div>
+    <section
+      id="home"
+      className="relative z-10 overflow-hidden bg-linear-to-b from-white via-gray-50 to-white pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-44 lg:pb-32"
+    >
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div className="max-w-xl">
+            <Badge variant="secondary" className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary">
+              Software Development Studio
+            </Badge>
+            <h1 className="mb-6 min-h-[2.5em] text-4xl font-bold leading-tight text-gray-900 md:min-h-[2.5em] md:text-5xl lg:text-6xl">
+              <Customtypewriter
+                words={[
+                  "Innovative Solutions",
+                  "Secure Systems",
+                  "AI-Powered Apps",
+                ]}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              />
+            </h1>
+            <p className="mb-10 text-lg leading-relaxed text-body-color">
+              We build modern, scalable, and efficient software tailored to
+              your business goals. From startups to enterprises — we craft
+              technology that grows with you.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="text-base">
+                <Link href="#contact">
+                  Get Started
+                  <ArrowRight className="ml-1 size-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-base">
+                <Link href="#features">Our Services</Link>
+              </Button>
             </div>
           </div>
+          <div className="relative mx-auto h-64 w-64 sm:h-80 sm:w-80 lg:h-[460px] lg:w-[460px]">
+            <Image src="/images/hero/9796308.png" alt="Quantum HashLink - Modern software development solutions" fill priority sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 460px" className="object-contain" />
+          </div>
         </div>
-        <HeroBackground />
-      </section>
-    </>
+      </div>
+      <HeroBackground />
+    </section>
   );
 };
 

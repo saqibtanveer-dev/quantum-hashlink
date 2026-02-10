@@ -2,12 +2,12 @@ import React from "react";
 
 const ContactInfoItem = ({ icon, title, text }) => (
   <div className="mb-8 flex w-full max-w-[370px]">
-    <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+    <div className="mr-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
       {icon}
     </div>
-    <div className="w-full">
-      <h4 className="mb-1 text-xl font-bold text-dark">{title}</h4>
-      <p className="text-base text-body-color">{text}</p>
+    <div>
+      <h4 className="mb-1 text-base font-bold text-gray-900">{title}</h4>
+      <p className="text-sm text-body-color">{text}</p>
     </div>
   </div>
 );
@@ -31,21 +31,21 @@ const EmailIcon = () => (
 );
 
 const ContactInfo = () => (
-  <div className="mb-12 max-w-[570px] lg:mb-0">
-    <span className="mb-4 block text-base font-semibold text-primary">
+  <div className="max-w-[570px]">
+    <span className="mb-3 block text-sm font-semibold uppercase tracking-wider text-primary">
       Contact Us
     </span>
-    <h2 className="mb-6 text-[32px] font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-      GET IN TOUCH WITH US
+    <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
+      Get in Touch
     </h2>
-    <p className="mb-9 text-base leading-relaxed text-body-color">
+    <p className="mb-10 text-base leading-relaxed text-body-color">
       Get in touch with us to start your project or schedule a free
       consultation. We&apos;re here to turn your vision into reality.
     </p>
     <ContactInfoItem
       icon={<LocationIcon />}
       title="Our Location"
-      text="Jadoon Hostal Top Floor Near Universitiy Of Haripur."
+      text="Jadoon Hostel, Top Floor, Near University of Haripur."
     />
     <ContactInfoItem
       icon={<PhoneIcon />}

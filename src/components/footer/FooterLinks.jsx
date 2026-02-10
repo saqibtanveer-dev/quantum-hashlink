@@ -3,29 +3,26 @@ import Link from "next/link";
 const linkSections = [
   {
     title: "Useful Links",
-    colClass: "w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12",
     links: [
       { label: "Blog", href: "/blogs" },
       { label: "Courses", href: "/enrollment" },
-      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    title: "Terms",
-    colClass: "w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12",
+    title: "Legal",
     links: [
-      { label: "TOS", href: "/" },
-      { label: "Privacy Policy", href: "/" },
-      { label: "Refund Policy", href: "/" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Refund Policy", href: "/refund-policy" },
     ],
   },
   {
     title: "Support & Help",
-    colClass: "w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12",
     links: [
-      { label: "Open Support Ticket", href: "/contact" },
-      { label: "Terms of Use", href: "/" },
-      { label: "About", href: "/about" },
+      { label: "Contact Support", href: "/contact" },
+      { label: "Enrollment", href: "/enrollment" },
+      { label: "Our Projects", href: "/#projects" },
     ],
   },
 ];
@@ -33,24 +30,22 @@ const linkSections = [
 const FooterLinks = () => (
   <>
     {linkSections.map((section) => (
-      <div key={section.title} className={section.colClass}>
-        <div className="mb-12 lg:mb-16">
-          <h2 className="mb-10 text-xl font-bold text-black">
-            {section.title}
-          </h2>
-          <ul>
-            {section.links.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div key={section.title}>
+        <h3 className="mb-6 text-sm font-semibold uppercase tracking-wider text-gray-900">
+          {section.title}
+        </h3>
+        <ul className="space-y-3">
+          {section.links.map((link) => (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                className="text-sm text-body-color transition hover:text-primary"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     ))}
   </>

@@ -8,15 +8,15 @@ function CourseCard({selectedCourse}) {
     router.push(`/course-details/${selectedCourse.id}`);
   };
   return (
-    <div className="w-full h-screen  lg:w-[30%] px-4">
-            <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 overflow-hidden relative group">
+    <div className="w-full lg:w-[30%] px-4">
+            <div className="bg-linear-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 overflow-hidden relative group">
               {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-300 to-pink-600"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-pink-300 to-pink-600"></div>
               <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-blue-100 opacity-20 group-hover:opacity-30 transition-all duration-500"></div>
 
               {/* Course content */}
               <div className="relative z-10">
-                <h2 className="text-2xl text-left font-bold mb-3 text-gray-800 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                <h2 className="text-2xl text-left font-bold mb-3 text-gray-800 bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">
                   {selectedCourse.title}
                 </h2>
 
@@ -119,7 +119,7 @@ function CourseCard({selectedCourse}) {
 
                 <div className='text-left'>
                   <button 
-                  className="px-8 py-3 bg-gradient-to-r from-pink-400 to-pink-600 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:from-pink-600 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50"
+                  className="px-8 py-3 bg-linear-to-r from-pink-400 to-pink-600 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:from-pink-600 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-pink-400/50"
                   onClick={handleLearnMore}
                   >
                   Learn More

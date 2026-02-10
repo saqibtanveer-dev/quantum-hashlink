@@ -2,6 +2,33 @@ import React from "react";
 import { courseDetails } from "@/data/courses";
 import { coursesMetaData } from "@/data/coursesMetaData";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const course = coursesMetaData.find((c) => c.id === id);
+  if (!course || course.id === 'all') {
+    return { title: 'Course Not Found | Quantum HashLink' };
+  }
+  return {
+    title: `${course.title} | Quantum HashLink`,
+    description: course.description,
+    keywords: [course.title.toLowerCase(), 'programming course', 'quantum hashlink course', 'tech training'],
+    alternates: {
+      canonical: `https://quantum-hashlink.com/course-details/${course.id}`,
+    },
+    openGraph: {
+      title: `${course.title} | Quantum HashLink`,
+      description: course.description,
+      url: `https://quantum-hashlink.com/course-details/${course.id}`,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary',
+      title: `${course.title} | Quantum HashLink`,
+      description: course.description,
+    },
+  };
+}
+
 export default async function CourseDetailsPage({ params }) {
   const { id } = await params;
   const course = courseDetails.find((c) => c.id === id);
@@ -11,7 +38,7 @@ export default async function CourseDetailsPage({ params }) {
   if (!course) {
     return (
       <div className="max-w-7xl mx-auto mt-24 px-4 py-10">
-        <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-100">
+        <div className="bg-linear-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-100">
           {/* Icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,14 +70,14 @@ export default async function CourseDetailsPage({ params }) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10 mt-24">
-      <div className="bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl border border-gray-100 overflow-hidden relative group">
+      <div className="bg-linear-to-br from-white to-blue-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl border border-gray-100 overflow-hidden relative group">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pink-300 to-pink-600" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-pink-300 to-pink-600" />
         <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-blue-100 opacity-20 group-hover:opacity-30 transition-all duration-500" />
 
         {/* Course content */}
         <div className="relative z-10 w-full text-left">
-          <h1 className="text-3xl font-bold mb-4 text-gray-800 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+          <h1 className="text-3xl font-bold mb-4 text-gray-800 bg-clip-text bg-linear-to-r from-blue-600 to-purple-600">
             {selectedCourse.title}
           </h1>
           <p className="text-gray-600 mb-6 text-base leading-relaxed">

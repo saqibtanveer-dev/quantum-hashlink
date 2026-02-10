@@ -2,12 +2,12 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./styles.css";
-import { EffectCoverflow, Pagination, Mousewheel } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import SectionTitle from "../Common/SectionTitle";
-import Image from "next/image";
 
 const testimonials = [
   {
@@ -20,7 +20,7 @@ const testimonials = [
     name: "Rohan Mehta",
     designation: "Product Manager",
     message:
-      "We hired Quantum Hashlink to modernize our internal logistics platform, and they exceeded expectations. The team’s deep knowledge of Next.js and React saved us months of development time and gave us a far more scalable codebase.",
+      "We hired Quantum Hashlink to modernize our internal logistics platform, and they exceeded expectations. The team's deep knowledge of Next.js and React saved us months of development time and gave us a far more scalable codebase.",
   },
   {
     name: "Amina Yousuf",
@@ -36,48 +36,60 @@ const testimonials = [
   },
 ];
 
+const QuoteIcon = () => (
+  <svg className="mb-4 h-8 w-8 text-primary/30" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+  </svg>
+);
+
 export default function TestimonialSlider() {
   return (
-    <section className="py-8 md:py-10 lg:py-14">
-      <div>
+    <section className="section-spacing">
+      <div className="container mx-auto px-4 lg:px-8">
         <SectionTitle
-          title="Don't take our words, take theirs"
-          paragraph=""
-          center={true}
-          mb="0px"
+          subtitle="Testimonials"
+          title="What Our Clients Say"
+          paragraph="Real feedback from the teams and founders we have worked with."
+          center
         />
-      </div>
 
-      <Swiper
-        effect="coverflow"
-        grabCursor
-        mousewheel
-        initialSlide={1}
-        centeredSlides
-        slidesPerView="auto"
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination
-        modules={[EffectCoverflow, Pagination, Mousewheel]}
-        className="mySwiper container"
-      >
-        {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index}>
-          <div className="bg-pink-500 py-4 px-6 rounded-md h-[400px] text-white flex flex-col justify-center text-center items-center">
-            <h3 className="text-xl font-semibold">{testimonial.name}</h3>
-            <p className="text-xs">{testimonial.designation}</p>
-            <p className="mt-4 px-4 text-justify">
-              {testimonial.message}
-            </p>
-          </div>
-        </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          grabCursor
+          spaceBetween={24}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          modules={[Pagination, Autoplay]}
+          className="testimonial-swiper pb-12!"
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <Card className="flex h-full flex-col border-gray-100 shadow-sm">
+                <CardContent className="flex flex-1 flex-col p-6">
+                  <QuoteIcon />
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-body-color">
+                    {testimonial.message}
+                  </p>
+                  <Separator className="mb-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                      {testimonial.name.charAt(0)}
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900">{testimonial.name}</h4>
+                      <p className="text-xs text-body-color">{testimonial.designation}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 }

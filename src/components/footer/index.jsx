@@ -1,40 +1,38 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 import FooterSocialLinks from "./FooterSocialLinks";
 import FooterLinks from "./FooterLinks";
-import FooterDecorations from "./FooterDecorations";
 
 const Footer = () => {
   return (
-    <>
-      <footer className="relative z-10 bg-white pt-16 md:pt-20 lg:pt-24 px-4 lg:px-20 flex justify-center">
-        <div className="container">
-          <div className="flex flex-wrap">
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
-              <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 flex items-start">
-                  <Image
-                    src="/qhl_logo.png"
-                    alt="Quantum HashLink Logo"
-                    width={80}
-                    height={80}
-                  />
-                  <p className="mt-[15px] font-bold">Quantum_HashLink</p>
-                </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color">
-                  Jadoon Hostel, University Road, Near University Of Haripur.
-                </p>
-                <FooterSocialLinks />
-              </div>
-            </div>
-            <FooterLinks />
+    <footer className="border-t border-gray-100 bg-white pb-8 pt-16">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2">
+            <Link href="/" className="mb-4 inline-flex items-center gap-3">
+              <Image
+                src="/qhl_logo.png"
+                alt="Quantum HashLink Logo"
+                width={36}
+                height={36}
+              />
+              <span className="text-lg font-bold text-gray-900">Quantum HashLink</span>
+            </Link>
+            <p className="mb-6 max-w-xs text-sm leading-relaxed text-body-color">
+              Jadoon Hostel, University Road, Near University of Haripur.
+            </p>
+            <FooterSocialLinks />
           </div>
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent"></div>
+          <FooterLinks />
         </div>
-        <FooterDecorations />
-      </footer>
-    </>
+        <Separator className="my-8" />
+        <p className="text-center text-sm text-body-color">
+          &copy; {new Date().getFullYear()} Quantum HashLink. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 };
 

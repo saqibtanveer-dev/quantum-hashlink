@@ -1,15 +1,16 @@
 import { z } from 'zod';
 
 export const enrollmentSchema = z.object({
-  name: z.string().min(3, "Name is required"),
+  name: z.string().trim().min(3, "Name must be at least 3 characters").max(100, "Name is too long"),
   contact: z
     .string()
-    .regex(/^\d{10,}$/, "Phone number must be at least 10 digits"),
-  address: z.string().nonempty("Please provide a address"),
-  dob: z.string().nonempty("Please provide you date of birth"),
-  education: z.string().nonempty("Please fill in you educaton level"),
-  course: z.string().nonempty("Course name is required"),
-  gender: z.string().nonempty("Please Select a Gender"),
+    .trim()
+    .regex(/^\+?[\d\s-]{10,15}$/, "Please enter a valid phone number (10-15 digits)"),
+  address: z.string().trim().min(1, "Please provide an address").max(300, "Address is too long"),
+  dob: z.string().trim().min(1, "Please provide your date of birth"),
+  education: z.string().trim().min(1, "Please fill in your education level").max(200, "Education field is too long"),
+  course: z.string().trim().min(1, "Course name is required"),
+  gender: z.string().trim().min(1, "Please select a gender"),
   courseType: z.enum(["ONLINE", "PHYSICAL"], {
     required_error: "Course type is required",
     invalid_type_error: "Invalid course type",
